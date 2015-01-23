@@ -1,6 +1,5 @@
 [
   "hubot-ambush",
-  "hubot-cheese",
   "hubot-calculator",
   "hubot-conspire",
   "hubot-darts",
@@ -11,17 +10,13 @@
   "hubot-google-images",
   "hubot-google-translate",
   "hubot-help",
-  "hubot-illegal-legal",
   "hubot-maps",
   "hubot-qr",
   "hubot-redis-brain",
   "hubot-reaction",
-  "hubot-secret-ballot",
-  "hubot-teamwork",
   "hubot-urban",
   "hubot-pugme",
   "hubot-pugsofwesteros",
-  "hubot-wargames",
   "hubot-whatthecommit",
   "hubot-youtube"
 ]
