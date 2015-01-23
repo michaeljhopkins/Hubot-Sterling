@@ -27,3 +27,10 @@ module.exports = (sterling) ->
     sterling.http("http://idop.appit.ventures/cards/quit").query(data).get() (err, res, body) ->
       if res.statusCode is 200
         data = JSON.parse(body)
+
+  sterling.respond /cards show/i, (msg) ->
+    username = msg.message.user.name
+    data = {'username': username}
+    sterling.http("http://idop.appit.ventures/cards/show").query(data).get() (err, res, body) ->
+      if res.statusCode is 200
+        data = JSON.parse(body)
