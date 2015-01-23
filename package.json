@@ -26,7 +26,6 @@
     "hubot-help": "*",
     "hubot-maps": "0.0.1",
     "hubot-pugme": "^0.1.0",
-    "hubot-pugsofwesteros": "^1.0.3",
     "hubot-qr": "0.0.2",
     "hubot-reaction": "0.0.6",
     "hubot-redis-brain": "0.0.2",
