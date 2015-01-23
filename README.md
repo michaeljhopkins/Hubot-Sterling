@@ -12,13 +12,12 @@
  * `GET http://<url>/sterling/scores[?name=<name>][&direction=<top|botton>][&limit=<10>]`
  * `I'm late` - Response with the only image to be used when you're late!
  * `NSA`
- * `Optionalls attempts to aim for a specific area of the body.
- * `Sterling send dondraper1 WhatsUp poke from dondraper1
+ * `Sterling send dondraper1 WhatsUp poke from dondraper1`
  * `business` - Sterling really loves business
  * `commit?` - returns a random commit message from whatthecommit.com
  * `for the life of me` - Sterling can't help but break out in song
  * `sterling adapter` - Reply with the adapter
- * `sterling ambush <user name>: <message>
+ * `sterling ambush <user name>: <message>`
  * `sterling animate me <query>` - The same thing as `image me`, except adds a few parameters to try to return an animated GIF instead.
  * `sterling beer me <beer name>` - Information about a beer
  * `sterling bottom <amount>`
@@ -64,7 +63,7 @@
  * `sterling roll` - Generates a random number between 1 and 100 inclusive
  * `sterling roll <num>` - Generates a random number between 1 and <num> inclusive
  * `sterling roll <num>-<num2>` - Generates a random number between <num> and <num2> inclusive
- * `sterling score <name> [for <reason>]
+ * `sterling score <name> [for <reason>]`
  * `sterling sentiment` - lists sentiment stats (message contents NOT stored)
  * `sterling shoot target (in the legs/head/body)` - Fire's a foam dart at the target
  * `sterling sms <to> <message>` - Sends <message> to the number <to>
@@ -75,7 +74,7 @@
  * `sterling task list tasks` - List the tasks
  * `sterling test idop` - test command that should reply into a slack channel
  * `sterling time` - Reply with current time
- * `sterling top <amount>
+ * `sterling top <amount>`
  * `sterling translate me <phrase>` - Searches for a translation for the <phrase> and then prints that bad boy out.
  * `sterling translate me from <source> into <target> <phrase>` - Translates <phrase> from <source> into <target>. Both <source> and <target> are optional
  * `sterling uber add <location> <lat>, <lon>` - add a location
@@ -92,7 +91,7 @@
  * `sterling who's happy?`
  * `sterling who's stressed?`
  * `sterling xkcd <num>` - XKCD comic <num>
- * `sterling xkcd [latest]- The latest XKCD comic
+ * `sterling xkcd [latest]` - The latest XKCD comic
  * `sterling xkcd random` - XKCD comic <num>
  * `sterling youtube me <query>` - Searches YouTube for the query and returns the video embed link.
  * `sterling qr me <url>` - turn a URL into a QR Code
