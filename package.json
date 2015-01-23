@@ -31,6 +31,7 @@
     "hubot-redis-brain": "0.0.2",
     "hubot-scripts": "^3.0.1-beta1",
     "hubot-slack": "^3.2.1",
+    "hubot-uber": "^1.0.1",
     "hubot-urban": "^1.0.0",
     "hubot-whatthecommit": "0.0.4",
     "hubot-youtube": "*",
