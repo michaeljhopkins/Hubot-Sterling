@@ -5,3 +5,4 @@ npm-debug.log
 nohup.out
 .hubot_history
 bin/hubot
+bin
