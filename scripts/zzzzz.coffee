@@ -11,8 +11,6 @@ module.exports = (robot) ->
     room = msg.message.user.room
     data = {'username': user,'message': message,'room': room}
     if(room != 'pokeproject')
-      msg.send('logging')
       robot.http('http://idop.appit.ventures/logger').query(data).get() (err, res, body) ->
         reply = body
     else
-      msg.send('not loggin')
