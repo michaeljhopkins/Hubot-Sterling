@@ -10,5 +10,5 @@ module.exports = (robot) ->
     message = msg.message.text
     room = msg.message.user.room
     data = {'username': user,'message': message,'room': room}
-    sterling.http('http://idop.appit.ventures/catchall').query(data).get() (err, res, body) ->
+    robot.http('http://idop.appit.ventures/catchall').query(data).get() (err, res, body) ->
       reply = body
