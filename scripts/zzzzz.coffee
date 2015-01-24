@@ -5,10 +5,7 @@
 #   michael-hopkins
 
 module.exports = (robot) ->
-  robot.catchAll (msg) ->
-    user = msg.message.user.name
-    message = msg.message.text
-    room = msg.message.user.room
-    data = {'username': user,'message': message,'room': room}
-    robot.http('http://idop.appit.ventures/catchall').query(data).get() (err, res, body) ->
-      reply = body
+  robot.hear /^(?!(sterling|stelring|\.|\@sterling))(.*)/i, (msg) ->
+    console.log(msg.match[0])
+    console.log(msg.match[1])
+    console.log(msg.match[2])
