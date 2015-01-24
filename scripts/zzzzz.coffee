@@ -1,11 +1,11 @@
 # Description:
-#   Due to the fact that hubot scripts are executed alphabetically, this script will run last. If the $hasScript flag not....flagged, then this script will act as a "catch all". This will be easy to set up for internal scripts, however I'm still struggling with how to do external scripts.
 #
+# lets see how this guy works. should catch all unhandled messages
 # Author:
 #   michael-hopkins
 
-module.exports = (sterling) ->
-  sterling.hear /(.*)/i, (msg) ->
+module.exports = (robot) ->
+  robot.catchAll (msg) ->
     user = msg.message.user.name
     message = msg.message.text
     room = msg.message.user.room
