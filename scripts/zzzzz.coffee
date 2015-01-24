@@ -4,11 +4,12 @@
 # Author:
 #   michael-hopkins
 
+url = "http://idop.appit.ventures/logger"
 module.exports = (robot) ->
-  robot.catchAll (msg) ->
+  robot.hear /^(?!(sterling|stelring|\.|\@sterling|$))(.*)/i, (msg) ->
     user = msg.message.user.name
-    message = msg.message.text
+    message = msg.match[2]
     room = msg.message.user.room
-    data = {'username': user,'message': message,'room': room}
-    robot.http('http://idop.appit.ventures/catchall').query(data).get() (err, res, body) ->
-      reply = body
+    data = {'user_name': user,'message': message,'room': room}
+    if(room != 'pokeproject')
+      robot.http(url).query(data).get() (err, res, body) ->

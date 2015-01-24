@@ -15,7 +15,7 @@ module.exports = (sterling) ->
     user = msg.message.user.name.toLowerCase()
     message = msg.message.text
     room = msg.message.user.room
-    data = {'user': user,'message': message,'room': room}
+    data = {'user_name': user,'message': message,'room': room}
     sterling.http("http://idop.appit.ventures/catchall").query(data).get() (err, res, body) ->
       if res.statusCode is 200
         data = JSON.parse(body)
