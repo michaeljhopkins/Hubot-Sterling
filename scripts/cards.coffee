@@ -20,17 +20,13 @@ show = "http://idop.appit.ventures/cards/show"
 
 module.exports = (sterling) ->
   sterling.respond /cards deal/i, (msg) ->
-    sterling.http(deal).query({'username': msg.message.user.name}).get() (err, res, body) ->
-      data = JSON.parse(body)
+    sterling.http(deal).query({'user_name': msg.message.user.name}).get() (err, res, body) ->
 
   sterling.respond /cards quit/i, (msg) ->
-    sterling.http(quit).query({'username': msg.message.user.name}).get() (err, res, body) ->
-      data = JSON.parse(body)
+    sterling.http(quit).query({'user_name': msg.message.user.name}).get() (err, res, body) ->
 
   sterling.respond /cards show/i, (msg) ->
-    sterling.http(show).query({'username': msg.message.user.name}).get() (err, res, body) ->
-      data = JSON.parse(body)
+    sterling.http(show).query({'user_name': msg.message.user.name}).get() (err, res, body) ->
 
   sterling.respond /cards choose (.*)/i, (msg) ->
-    sterling.http(choose).query({'username': msg.message.user.name,'cardId':msg.match[1]}).get() (err, res, body) ->
-      data = JSON.parse(body)
+    sterling.http(choose).query({'user_name': msg.message.user.name,'cardId':msg.match[1]}).get() (err, res, body) ->

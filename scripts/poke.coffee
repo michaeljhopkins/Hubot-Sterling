@@ -9,11 +9,11 @@
 #
 # Author:
 #   mikenolimits
-
+url = "http://iodop.appit.ventures/poke"
 module.exports = (sterling) ->
 
   sterling.respond /poke/i, (msg) ->
     message = msg.match[1]
-    query = { statement: message, recipient: 'steve', conversevia: 'slack'}
-    sterling.http("http://iodop.appit.ventures/poke").query(query).get() (err, res, body) ->
-      msg.send(body);
+    data = {statement: message, recipient: 'steve', conversevia: 'slack'}
+    sterling.http(url).query(data).get() (err, res, body) ->
+      msg.send(body)
