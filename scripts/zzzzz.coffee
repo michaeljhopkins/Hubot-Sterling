@@ -5,7 +5,7 @@
 #   michael-hopkins
 
 module.exports = (robot) ->
-  robot.hear /^(?!(sterling|stelring|\.|\@sterling))(.*)/i, (msg) ->
+  robot.hear /^(?!(sterling|stelring|\.|\@sterling|$))(.*)/i, (msg) ->
     console.log(msg.match[0])
     console.log(msg.match[1])
     console.log(msg.match[2])
