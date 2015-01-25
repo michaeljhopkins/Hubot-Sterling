@@ -26,7 +26,6 @@
     "hubot-maps": "0.0.1",
     "hubot-pugme": "^0.1.0",
     "hubot-qr": "0.0.2",
-    "hubot-reaction": "0.0.6",
     "hubot-redis-brain": "0.0.2",
     "hubot-scripts": "^3.0.1-beta1",
     "hubot-slack": "^3.2.1",
