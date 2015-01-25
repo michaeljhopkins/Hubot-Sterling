@@ -9,11 +9,11 @@
 #
 # Commands:
 # !<tag> - Get a random gif with your tag
-# hubot set gif sfw limit to n - Set the SFW guard limit, 0 = 'y', 1 = 'g', 2 = 'pg', 3 = 'pg-13', 4 = 'r'
-# hubot get gif sfw limit - Get the current SFW guard limit (0 - 4)
-# hubot enable gif sfw guard  - Enable SFW guard
-# hubot disable gif sfw guard  - Disable SFW guard
-# hubot get gif sfw status - Get the current SFW guard status (enabled/disabled)
+# hubot gif set sfw limit - Set the SFW guard limit, 0 = 'y', 1 = 'g', 2 = 'pg', 3 = 'pg-13', 4 = 'r'
+# hubot gif get sfw limit - Get the current SFW guard limit (0 - 4)
+# hubot gif enable sfw guard - Enable SFW guard
+# hubot gif disable  sfw guard - Disable SFW guard
+# hubot gif get sfw status - Get the current SFW guard status (enabled/disabled)
 
 api_key = 'dc6zaTOxFJmzC'
 
@@ -70,18 +70,18 @@ module.exports = (robot) ->
     tags = msg.match[1]
     getRandomGiphyGif(msg, tags)
 
-  robot.respond /set gif sfw limit to (\d)/i, (msg) ->
+  robot.respond /gif set sfw limit(\d)/i, (msg) ->
     limit = msg.match[1]
     setSFWGuardLimit(msg, limit)
 
-  robot.respond /get gif sfw limit/i, (msg) ->
+  robot.respond /gif get sfw limit/i, (msg) ->
     getSFWGuardLimit(msg)
 
-  robot.respond /enable gif sfw guard/i, (msg) ->
+  robot.respond /gif enable sfw guard/i, (msg) ->
     setSFWGuardStatus(msg, true)
 
-  robot.respond /disable gif sfw guard/i, (msg) ->
+  robot.respond /gif disable sfw guard/i, (msg) ->
     setSFWGuardStatus(msg, false)
 
-  robot.respond /get gif sfw status/i, (msg) ->
+  robot.respond /gif get sfw status/i, (msg) ->
     getSFWGuardStatus(msg)
