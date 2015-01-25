@@ -19,11 +19,11 @@
 #   hubot cast <card name> - a picture of the named magic card
 #   hubot nettipot - Send scarring, horrifying image of a nettipot in use.
 #   hubot nettibomb - Send a nettibomb
-#   !no
-#   !tableflip
-#   !dunno
-#   !unstoppable
-#   !drama
+#   *no
+#   *tableflip
+#   *dunno
+#   *unstoppable
+#   *drama
 #
 # Author:
 #   michael-hopkins
@@ -153,15 +153,15 @@ module.exports = (robot) ->
     msg.send msg.random tonyQuotes
 
   # Liona triggers
-  robot.hear /!no/i, (msg) ->
+  robot.hear /\*no/i, (msg) ->
     msg.send "NOOOOOOOOO! http://www.youtube.com/watch?v=umDr0mPuyQc"
-  robot.hear /!tableflip/i, (msg) ->
+  robot.hear /\*tableflip/i, (msg) ->
     msg.send "(╯°□°)╯︵ ┻━┻"
-  robot.hear /!dunno/i, (msg) ->
+  robot.hear /\*dunno/i, (msg) ->
     msg.send " ¯\\_(ツ)_/¯"
-  robot.hear /!unstoppable/i, (msg) ->
+  robot.hear /\*unstoppable/i, (msg) ->
     msg.send "I am unstoppable!!! http://i.imgur.com/ALHS4Za.png"
-  robot.hear /!drama/i, (msg) ->
+  robot.hear /\*drama/i, (msg) ->
     msg.send "I just can't take it anymore...."
 
   # Replygif tags
