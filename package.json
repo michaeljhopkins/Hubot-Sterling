@@ -37,7 +37,6 @@
     "hubot-urban": "^1.0.0",
     "hubot-whatthecommit": "0.0.4",
     "hubot-youtube": "*",
-    "ordrin-api": "^1.0.2",
     "prompt": "^0.2.14",
     "request": "^2.51.0",
     "scraper": "0.0.9",
