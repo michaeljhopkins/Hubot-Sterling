@@ -9,5 +9,7 @@
 
 module.exports = (robot) ->
   robot.respond /(google)( me)? (.*)/i, (msg) ->
-    uri = "https://www.google.com/search?q=#{msg.match[3]}"
+    str = msg.match[3];
+    search = str.split(' ').join('+');
+    uri = "https://www.google.com/search?q=#{search}"
     msg.send uri
