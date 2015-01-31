@@ -11,12 +11,11 @@ module.exports = (robot) ->
     user = msg.message.user.name
     message = msg.match[2]
     room = msg.message.user.room
-    data = {'user_name': user,'message': message,'room': room}
+    data = {'user_name': user,'message': message,'room': room,'directive': false}
     robot.http(nondirective).query(data).get() (err, res, body) ->
   robot.respond /(.*)/i, (msg) ->
     user = msg.message.user.name
     message = msg.match[1]
     room = msg.message.user.room
-    directive = 1
-    data = {'user_name': user,'message': message,'room': room,'directive': directive}
+    data = {'user_name': user,'message': message,'room': room,'directive': true}
     robot.http(directive).query(data).get() (err, res, body) ->
