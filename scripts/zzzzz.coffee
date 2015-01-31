@@ -4,12 +4,18 @@
 # Author:
 #   michael-hopkins
 
-url = "http://idop.appit.ventures/logger"
+nondirective = "http://idop.appit.ventures/webhooks/nondirective"
+directive = "http://idop.appit.ventures/webhooks/directive"
 module.exports = (robot) ->
-  robot.hear /^(?!(sterling|stelring|\.|\@sterling|$))(.*)/i, (msg) ->
+  robot.hear /^(?!(sterling|stelring|\.|@sterling|$))(.*)/i, (msg) ->
     user = msg.message.user.name
     message = msg.match[2]
     room = msg.message.user.room
     data = {'user_name': user,'message': message,'room': room}
-    if(room != 'pokeproject')
-      robot.http(url).query(data).get() (err, res, body) ->
+    robot.http(nondirective).query(data).get() (err, res, body) ->
+  robot.respond /(.*)/i, (msg) ->
+    user = msg.message.user.name
+    message = msg.match[1]
+    room = msg.message.user.room
+    data = {'user_name': user,'message': message,'room': room}
+    robot.http(directive).query(data).get() (err, res, body) ->
