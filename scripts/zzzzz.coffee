@@ -17,5 +17,6 @@ module.exports = (robot) ->
     user = msg.message.user.name
     message = msg.match[1]
     room = msg.message.user.room
-    data = {'user_name': user,'message': message,'room': room}
+    directive = 1
+    data = {'user_name': user,'message': message,'room': room,'directive': directive}
     robot.http(directive).query(data).get() (err, res, body) ->
