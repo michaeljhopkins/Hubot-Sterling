@@ -20,17 +20,34 @@ show = "http://idop.appit.ventures/cards/show"
 
 module.exports = (sterling) ->
   sterling.respond /cards deal/i, (msg) ->
-    sterling.http(deal).query({'user_name': msg.message.user.name}).get() (err, res, body) ->
+    user = msg.message.user.name
+    message = msg.message.text
+    room = msg.message.user.room
+    data = {'user_name': user,'message': message,'room': room,'directive': 1}
+    sterling.http(deal).query(data).get() (err, res, body) ->
       data = JSON.parse(body)
 
   sterling.respond /cards quit/i, (msg) ->
-    sterling.http(quit).query({'user_name': msg.message.user.name}).get() (err, res, body) ->
+    user = msg.message.user.name
+    message = msg.message.text
+    room = msg.message.user.room
+    data = {'user_name': user,'message': message,'room': room,'directive': 1}
+    sterling.http(quit).query(data).get() (err, res, body) ->
       data = JSON.parse(body)
 
   sterling.respond /cards show/i, (msg) ->
-    sterling.http(show).query({'user_name': msg.message.user.name}).get() (err, res, body) ->
+    user = msg.message.user.name
+    message = msg.message.text
+    room = msg.message.user.room
+    data = {'user_name': user,'message': message,'room': room,'directive': 1}
+    sterling.http(show).query(data).get() (err, res, body) ->
       data = JSON.parse(body)
 
   sterling.respond /cards choose (.*)/i, (msg) ->
-    sterling.http(choose).query({'user_name': msg.message.user.name,'cardId':msg.match[1]}).get() (err, res, body) ->
+    user = msg.message.user.name
+    message = msg.message.text
+    room = msg.message.user.room
+    cardId = msg.match[1]
+    data = {'user_name': user,'message': message,'room': room,'directive': 1,'cardId': cardId}
+    sterling.http(choose).query(data).get() (err, res, body) ->
       data = JSON.parse(body)
