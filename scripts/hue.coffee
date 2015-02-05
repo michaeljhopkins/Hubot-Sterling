@@ -72,7 +72,8 @@ module.exports = (robot) ->
   robot.respond /hue groups/i, (msg) ->
     url = "http://#{base_url}/api/#{hash}/groups"
     getGenInfo msg, url, (responseText) ->
-      msg.send "Groups: " + responseText
+      text = JSON.parse(responseText)
+      msg.send "Groups: " + text
 
   # FAKE GROUP COMMANDS
   robot.respond /hue group (\w+)=(\[((\d)+,)*((\d)+)\])/i, (msg) ->
