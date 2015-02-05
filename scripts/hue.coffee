@@ -64,7 +64,9 @@ module.exports = (robot) ->
     2: [2]
     3: [3]
     4: [4]
-    all: [4]
+    michael: [4]
+    raelina: [1]
+    all: [1,4]
 
   # GROUP COMMANDS
   robot.respond /hue groups/i, (msg) ->
