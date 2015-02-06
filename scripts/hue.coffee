@@ -27,25 +27,6 @@
 #
 #
 # Commands:
-#   hubot hue lights - list all lights
-#   hubot hue light <light number>  - shows light status
-#   hubot hue turn light <light number> <on|off> - flips the switch
-#   hubot hue groups - groups lights together to control with one API call
-#   hubot hue config - reads bridge config
-#   hubot hue hash - get a hash code (press the link button)
-#   hubot hue set config (name|linkbutton) <value>- change the name or programatically press the link button
-#   hubot hue (alert|alerts) light <light number> - blink once or blink for 10 seconds specific light
-#   hubot hue hsb light <light number> <hue 0-65535> <saturation 0-254> <brightness 0-254>
-#   hubot hue xy light <light number> <x 0.0-1.0> <y 0.0-1.0>
-#   hubot hue ct light <light number> <color temp 153-500>
-#   hubot hue group <group name>=[<comma separated list of light indexes>]
-#   hubot hue ls groups - lists the groups of lights
-#   hubot hue rm group <group name> - remove grouping of lights named <group name>
-#   hubot hue @<group name> off - turn all lights in <group name> off
-#   hubot hue @<group name> on - turn all lights in <group name> on
-#   hubot hue @<group name> hsb=(<hue>,<sat>,<bri>) - set hsb value for all lights in group
-#   hubot hue @<group name> xy=(<x>,<y>) - set x, y value for all lights in group
-#   hubot hue @<group name> ct=<color temp> - set color temp for all lights in group
 #
 # Notes:
 #
@@ -65,19 +46,18 @@ module.exports = (robot) ->
     3: [3]
     4: [4]
     michael: [4]
-    raelina: [1]
-    all: [1,4]
+    jasmin: [3]
+    raelina: [2]
+    brandy: [1]
+    dev: [2,4]
+    pm: [1,3]
+    all: [1,2,3,4]
 
   # GROUP COMMANDS
   robot.respond /hue groups/i, (msg) ->
     url = "http://#{base_url}/api/#{hash}/groups"
     getGenInfo msg, url, (responseText) ->
-      resp = "Groups:"
-      for group of responseText
-        resp = resp + "#{group.name}"
-        for light of group.lights
-          resp = resp + "#{light} "
-      msg.send(resp)
+      msg.send responseText
 
   # FAKE GROUP COMMANDS
   robot.respond /hue group (\w+)=(\[((\d)+,)*((\d)+)\])/i, (msg) ->
@@ -224,7 +204,26 @@ module.exports = (robot) ->
         #msg.send responseText
     else
       msg.send "unsupported config setting"
-
+  robot.respond /hue help/i,(msg) ->
+    msg.send "`sterling hue lights` - list all lights"
+    msg.send "`sterling hue light {lightId} ` - shows light status"
+    msg.send "`sterling hue turn light {lightId} {on/off}` - flips the switch"
+    msg.send "`sterling hue groups` - groups lights together to control with one API call"
+    msg.send "`sterling hue config` - reads bridge config"
+    msg.send "`sterling hue hash` - get a hash code (press the link button)"
+    msg.send "`sterling hue set config (name|linkbutton) {value}` - change the name or programatically press the link button"
+    msg.send "`sterling hue (alert|alerts) light {light number}` - blink once or blink for 10 seconds specific light"
+    msg.send "`sterling hue hsb light {lightId} {hue 0-65535} {saturation 0-254} {brightness 0-254}`"
+    msg.send "`sterling hue xy light {lightId} {x 0.0-1.0} {y 0.0-1.0}`"
+    msg.send "`sterling hue ct light {lightId} {color temp 153-500}`"
+    msg.send "`sterling hue group {group name}=[{comma separated list of light indexes}]`"
+    msg.send "`sterling hue ls groups` - lists the groups of lights"
+    msg.send "`sterling hue rm group {group name}` - remove grouping of lights named {group name}"
+    msg.send "`sterling hue @{group name} off` - turn all lights in {group name} off"
+    msg.send "`sterling hue @{group name} on` - turn all lights in {group name} on"
+    msg.send "`sterling hue @{group name} hsb=({hue},{sat},{bri})` - set hsb value for all lights in group"
+    msg.send "`sterling hue @{group name} xy=({x},{y})` - set x, y value for all lights in group"
+    msg.send "`sterling hue @{group name} ct={color temp}` - set color temp for all lights in group"
 
 #  robot.respond /rollout activate_user ([^\s]*) ([^\s]*)/i, (msg) ->
 #    msg.http(endpoint + msg.match[1] + '/users').query(user: msg.match[2]).put() (err, res, body) ->
