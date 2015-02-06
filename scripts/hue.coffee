@@ -164,6 +164,7 @@ module.exports = (robot) ->
   robot.respond /hue (alert|alerts) light (.+)/i, (msg) ->
     [state,light] = msg.match[1..2]
     msg.send "ain't nobody got time for that!"
+    msg.send "http://imgur.com/NGGjeaC"
 
     jsonParams = alert: if state is "alert" then "select" else "lselect"
 
