@@ -37,7 +37,6 @@
     "hubot-slack": "^3.2.1",
     "hubot-uber": "^1.0.1",
     "hubot-urban": "^1.0.0",
-    "hubot-voicechat": "^1.0.1",
     "hubot-whatthecommit": "0.0.4",
     "hubot-youtube": "*",
     "prompt": "^0.2.14",
