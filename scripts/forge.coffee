@@ -12,5 +12,10 @@
 
 module.exports = (sterling) ->
   sterling.respond /deploy ([a-zA-Z]*\b) to ([a-zA-Z]*\b)/i, (msg) ->
-    data = {repo: msg.match[1],branch: msg.match[2]}
+    user = msg.message.user.name
+    message = msg.match[2]
+    room = msg.message.user.room
+    repo = msg.match[1]
+    branch = msg.match[2]
+    data = {repo: repo,branch: branch, 'user_name': user,'message': message,'room': room,'directive': 1}
     sterling.http("http://idop.appit.ventures/forge").query(data).get() (err, res, body) ->
