@@ -18,6 +18,7 @@ quit = "http://idop.appit.ventures/cards/quit"
 choose = "http://idop.appit.ventures/cards/choose"
 show = "http://idop.appit.ventures/cards/show"
 status = "http://idop.appit.ventures/cards/status"
+start = "http://idop.appit.ventures/cards/start"
 
 module.exports = (sterling) ->
   sterling.respond /cards deal/i, (msg) ->
@@ -26,6 +27,13 @@ module.exports = (sterling) ->
     room = msg.message.user.room
     data = {'user_name': user,'message': message,'room': room,'directive': 1}
     sterling.http(deal).query(data).get() (err, res, body) ->
+
+  sterling.respond /cards start/i, (msg) ->
+    user = msg.message.user.name
+    message = msg.message.text
+    room = msg.message.user.room
+    data = {'user_name': user,'message': message,'room': room,'directive': 1}
+    sterling.http(start).query(data).get() (err, res, body) ->
 
   sterling.respond /cards quit/i, (msg) ->
     user = msg.message.user.name
