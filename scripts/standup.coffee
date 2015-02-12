@@ -77,11 +77,6 @@ module.exports = (robot) ->
              skip <who> - skip someone when they're not available
              """
 
-  robot.catchAll (msg) ->
-    unless robot.brain.data.standup?[msg.message.user.room]
-      return
-    robot.brain.data.standup[msg.message.user.room].log.push { message: msg.message, time: new Date().getTime() }
-
 shuffleArrayClone = (array) ->
   cloned = []
   for i in (array.sort -> 0.5 - Math.random())

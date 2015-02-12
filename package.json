@@ -16,7 +16,6 @@
     "htmlparser": "^1.7.7",
     "hubot-ambush": "0.0.2",
     "hubot-appstore-review-times": "^1.0.4",
-    "hubot-auth": "^1.2.0",
     "hubot-calculator": "^0.4.0",
     "hubot-codinglove": "*",
     "hubot-conspire": "^1.0.0",

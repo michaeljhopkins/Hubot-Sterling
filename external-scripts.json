@@ -11,7 +11,6 @@
   "hubot-google-translate",
   "hubot-help",
   "hubot-maps",
-  "hubot-auth",
   "hubot-qr",
   "hubot-redis-brain",
   "hubot-uber",
