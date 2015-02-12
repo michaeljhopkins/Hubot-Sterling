@@ -12,7 +12,6 @@
   "hubot-help",
   "hubot-maps",
   "hubot-auth",
-  "hubot-standup",
   "hubot-qr",
   "hubot-redis-brain",
   "hubot-uber",
