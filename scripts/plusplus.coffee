@@ -48,33 +48,7 @@ module.exports = (robot) ->
     # do some sanitizing
     reason = reason?.trim().toLowerCase()
     name = (name.replace /(^\s*@)|([,:\s]*$)/g, "").trim().toLowerCase() if name
-
-    # check whether a name was specified. use MRU if not
-    unless name?
-      [name, lastReason] = scoreKeeper.last(room)
-      reason = lastReason if !reason? && lastReason?
-
-    # do the {up, down}vote, and figure out what the new score is
-    [score, reasonScore] = if operator == "++"
-      scoreKeeper.add(name, from, room, reason)
-    else
-      scoreKeeper.subtract(name, from, room, reason)
-
-    # if we got a score, then display all the things and fire off events!
-    if score?
-      message = if reason?
-        "#{name} has #{score} points, #{reasonScore} of which are for #{reason}."
-      else
-        "#{name} has #{score} points"
-
-      msg.send message
-
-      robot.emit "plus-one", {
-        name: name
-        direction: operator
-        room: room
-        reason: reason
-      }
+    robot.http("http://idop.appit.ventures/plusplus").query({user_name: name, operator: operator, reason: reason}).get() (err, res, body) ->
 
   robot.respond ///
     (?:erase )
