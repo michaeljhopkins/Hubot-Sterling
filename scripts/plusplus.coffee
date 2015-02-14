@@ -48,7 +48,17 @@ module.exports = (robot) ->
     # do some sanitizing
     reason = reason?.trim().toLowerCase()
     name = (name.replace /(^\s*@)|([,:\s]*$)/g, "").trim().toLowerCase() if name
-    robot.http("http://idop.appit.ventures/plusplus/newVote").query({user_name: name, operator: operator, reason: reason}).get() (err, res, body) ->
+
+
+	the_thing = name
+	operator = operator
+	reason = reason    
+    user_name = msg.message.user.name
+    room = msg.message.user.room
+    data = {'the_thing': the_thing,'operator': operator,'reason': reason,'user_name': user_name,'room': room,'directive': 1}
+
+    robot.http("http://idop.appit.ventures/plusplus/newVote").query(data).get() (err, res, body) ->
+    	console.log(body)
 
   robot.respond ///
     (?:erase )
