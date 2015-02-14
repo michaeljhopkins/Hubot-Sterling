@@ -50,7 +50,6 @@ module.exports = (robot) ->
     name = (name.replace /(^\s*@)|([,:\s]*$)/g, "").trim().toLowerCase() if name
     the_thing = name
     operator = operator
-    reason = reason
     user_name = msg.message.user.name
     room = msg.message.user.room
     data = {'the_thing': the_thing,'operator': operator,'reason': reason,'user_name': user_name,'room': room,'directive': 0}
