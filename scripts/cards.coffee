@@ -10,6 +10,7 @@
 #   hubot cards show - messages you your cards again incase you forgot
 #   /cards {id} - plays the id of your chosen card for the current round (a slack slash command is taking care of it though)
 #   hubot cards choose {id} - The current round's judge chooses the best card against the pre determined black card
+#   hubot cards status - Returns the current rounds judge, and any players who have not yet played a card
 #
 # Author:
 #   michael-hopkins
