@@ -40,20 +40,20 @@ class Groceries
 module.exports = (robot) ->
   groceries = new Groceries robot
 
-  robot.respond /(grocery add|add grocery) (.+?)$/i, (msg) ->
-    grocery = groceries.add msg.match[2]
-    msg.send "Grocery added: ##{grocery.num} - #{grocery.grocery}"
+#  robot.respond /(grocery add|add grocery) (.+?)$/i, (msg) ->
+#    grocery = groceries.add msg.match[2]
+#    msg.send "Grocery added: ##{grocery.num} - #{grocery.grocery}"
 
-  robot.respond /(grocery list|list groceries)/i, (msg) ->
-    if groceries.all().length > 0
-      response = ""
-      for grocery, num in groceries.all()
-        response += "##{grocery.num} - #{grocery.grocery}\n"
-      msg.send response
-    else
-      msg.send "There are no groceries"
+#  robot.respond /(grocery list|list groceries)/i, (msg) ->
+#    if groceries.all().length > 0
+#      response = ""
+#      for grocery, num in groceries.all()
+#        response += "##{grocery.num} - #{grocery.grocery}\n"
+#      msg.send response
+#    else
+#      msg.send "There are no groceries"
 
-  robot.respond /(grocery delete|delete grocery) #?(\d+)/i, (msg) ->
-    groceryNum = msg.match[2]
-    grocery = groceries.deleteByNumber groceryNum
-    msg.send "Grocery deleted: ##{grocery.num} - #{grocery.grocery}"
+#  robot.respond /(grocery delete|delete grocery) #?(\d+)/i, (msg) ->
+#    groceryNum = msg.match[2]
+#    grocery = groceries.deleteByNumber groceryNum
+#    msg.send "Grocery deleted: ##{grocery.num} - #{grocery.grocery}"
