@@ -1,3 +1,12 @@
+# Description:
+#   Create VoiceChatApi rooms on the fly
+#
+# Commands:
+#   hubot voice me - hubot will reply with a new voicechatapi room
+#
+# Author:
+#   michael-hopkins - contributed
+
 module.exports = (robot) ->
   url = "http://www.voicechatapi.com"
   purgeMessage = ""

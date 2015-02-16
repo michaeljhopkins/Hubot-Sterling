@@ -1,6 +1,15 @@
-# Agile standup bot ala tender
+# Description:
+#   Agile standup bot ala tender
 #
-# standup? - show help for standup
+# Commands:
+#   hubot <who> is a member of <team> - tell hubot who is the member of <team>'s standup
+#   hubot standup for <team> - start the standup for <team>
+#   hubot cancel standup - cancel the current standup
+#   hubot next - say when your updates for the standup is done
+#   hubot skip <who> - skip someone when they're not available
+#
+# Author:
+#   michael-hopkins - contributed
 
 module.exports = (robot) ->
   robot.respond /(?:cancel|stop) standup *$/i, (msg) ->
@@ -67,15 +76,6 @@ module.exports = (robot) ->
       msg.send "Be more specific, I know #{users.length} people named like that: #{(user.name for user in users).join(", ")}"
     else
       msg.send "#{msg.match[2]}? Never heard of 'em"
-
-  robot.respond /standup\?? *$/i, (msg) ->
-    msg.send """
-             <who> is a member of <team> - tell hubot who is the member of <team>'s standup
-             standup for <team> - start the standup for <team>
-             cancel standup - cancel the current standup
-             next - say when your updates for the standup is done
-             skip <who> - skip someone when they're not available
-             """
 
 shuffleArrayClone = (array) ->
   cloned = []
