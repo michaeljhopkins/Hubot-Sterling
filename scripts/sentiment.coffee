@@ -27,28 +27,22 @@
 
 module.exports = (sterling) ->
   sterling.respond /sentiment/i, (msg) ->
-    user = msg.message.user.name
+    user_name = msg.message.user.name
     message = msg.message.text
     room = msg.message.user.room
-    data = {'user': user,'message': message,'room': room}
+    data = {'user_name': user_name,'message': message,'room': room}
     sterling.http("http://idop.appit.ventures/sentiment").query(data).get() (err, res, body) ->
-      if res.statusCode is 200
-        data = body
 
   sterling.respond /who( i|')s happy\??/i, (msg) ->
-    user = msg.message.user.name.toLowerCase()
+    user_name = msg.message.user.name.toLowerCase()
     message = msg.message.text
     room = msg.message.user.room
-    data = {'user': user,'message': message,'room': room}
-    sterling.http("http://idop.appit.ventures/sentiment/who/happy").query(data).get() (err, res, body) ->
-      if res.statusCode is 200
-        data = body
+    data = {'user_name': user_name,'message': message,'room': room}
+    sterling.http("http://idop.appit.ventures/sentiment/happy").query(data).get() (err, res, body) ->
 
   sterling.respond /who( i|')s (sad|stress(ed)?)\??/i, (msg) ->
-    user = msg.message.user.name
+    user_name = msg.message.user.name
     message = msg.message.text
     room = msg.message.user.room
-    data = {'user': user,'message': message,'room': room}
-    sterling.http("http://idop.appit.ventures/sentiment/who/stress").query(data).get() (err, res, body) ->
-      if res.statusCode is 200
-        data = body
+    data = {'user_name': user_name,'message': message,'room': room}
+    sterling.http("http://idop.appit.ventures/sentiment/stress").query(data).get() (err, res, body) ->

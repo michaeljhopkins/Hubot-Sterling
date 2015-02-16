@@ -11,5 +11,7 @@ module.exports = (robot) ->
   robot.respond /(google)( me)? (.*)/i, (msg) ->
     str = msg.match[3];
     search = str.split(' ').join('+');
-    uri = "https://www.google.com/search?q=#{search}"
+    fixurl = str.replace(search,':','%3A');
+    fixurl2 = str.replace(fixurl,'/','%2F');
+    uri = "http://lmgtfy.com/?q=#{fixurl2}"
     msg.send uri
