@@ -13,12 +13,7 @@
 #
 # Author:
 #   michael-hopkins
-deal = "http://idop.appit.ventures/cards/deal"
-quit = "http://idop.appit.ventures/cards/quit"
-choose = "http://idop.appit.ventures/cards/choose"
-show = "http://idop.appit.ventures/cards/show"
-status = "http://idop.appit.ventures/cards/status"
-start = "http://idop.appit.ventures/cards/start"
+url = "http://idop.appit.ventures/cards/"
 
 module.exports = (sterling) ->
   sterling.respond /cards deal/i, (msg) ->
@@ -26,28 +21,28 @@ module.exports = (sterling) ->
     message = msg.message.text
     room = msg.message.user.room
     data = {'user_name': user,'message': message,'room': room,'directive': 1}
-    sterling.http(deal).query(data).get() (err, res, body) ->
+    sterling.http(url+"deal").query(data).get() (err, res, body) ->
 
   sterling.respond /cards start/i, (msg) ->
     user = msg.message.user.name
     message = msg.message.text
     room = msg.message.user.room
     data = {'user_name': user,'message': message,'room': room,'directive': 1}
-    sterling.http(start).query(data).get() (err, res, body) ->
+    sterling.http(url+"start").query(data).get() (err, res, body) ->
 
   sterling.respond /cards quit/i, (msg) ->
     user = msg.message.user.name
     message = msg.message.text
     room = msg.message.user.room
     data = {'user_name': user,'message': message,'room': room,'directive': 1}
-    sterling.http(quit).query(data).get() (err, res, body) ->
+    sterling.http(url+"quit").query(data).get() (err, res, body) ->
 
   sterling.respond /cards show/i, (msg) ->
     user = msg.message.user.name
     message = msg.message.text
     room = msg.message.user.room
     data = {'user_name': user,'message': message,'room': room,'directive': 1}
-    sterling.http(show).query(data).get() (err, res, body) ->
+    sterling.http(url+"show").query(data).get() (err, res, body) ->
 
   sterling.respond /cards choose (.*)/i, (msg) ->
     user = msg.message.user.name
@@ -55,11 +50,11 @@ module.exports = (sterling) ->
     room = msg.message.user.room
     cardId = msg.match[1]
     data = {'user_name': user,'message': message,'room': room,'directive': 1,'cardId': cardId}
-    sterling.http(choose).query(data).get() (err, res, body) ->
+    sterling.http(url+"choose").query(data).get() (err, res, body) ->
 
   sterling.respond /cards status/i, (msg) ->
     user = msg.message.user.name
     message = msg.message.text
     room = msg.message.user.room
     data = {'user_name': user,'message': message,'room': room,'directive': 1}
-    sterling.http(status).query(data).get() (err, res, body) ->
+    sterling.http(url+"status").query(data).get() (err, res, body) ->
