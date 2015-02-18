@@ -1,11 +1,10 @@
 # Markov storage implementation that uses redis hash keys to store the model.
 class RedisStorage
 
-  # Prefix used to isolate stored markov transitions from other keys in the database.
-  keyprefix = "markov:"
-
   # Create a storage module that uses the provided Redis connection.
-  constructor: (@client) ->
+  constructor: (@client, keyprefix) ->
+    # Prefix used to isolate stored markov transitions from other keys in the database.
+    @keyprefix = keyprefix || "markov:"
 
   # Uniformly and unambiguously convert an array of Strings and nulls into a valid
   # Redis key. Uses a length-prefixed encoding.
@@ -15,7 +14,7 @@ class RedisStorage
   _encode: (key) ->
     encoded = for part in key
       if part then "#{part.length}#{part}" else "0"
-    keyprefix + encoded.join('')
+    @keyprefix + encoded.join('')
 
   # Record a transition within the model. "transition.from" is an array of Strings and
   # nulls marking the prior state and "transition.to" is the observed next state, which
