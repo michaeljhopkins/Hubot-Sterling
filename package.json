@@ -43,6 +43,7 @@
     "hubot-youtube": "*",
     "jsdom": "^3.1.1",
     "prompt": "^0.2.14",
+    "psi": "^1.0.5",
     "request": "^2.51.0",
     "scraper": "0.0.9",
     "soupselect": "^0.2.0",
