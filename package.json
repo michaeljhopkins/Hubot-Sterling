@@ -47,6 +47,7 @@
     "underscore": "^1.7.0",
     "underscore.string": "^3.0.2",
     "xml2js": "^0.4.4",
-    "xml2json": "^0.5.1"
+    "xml2json": "^0.5.1",
+    "jsdom": "0.8.8"
   }
 }
