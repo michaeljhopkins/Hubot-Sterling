@@ -43,8 +43,8 @@ module.exports = (robot) ->
   all_storage = new RedisStorage(client)
   all_model = new MarkovModel(all_storage, ply, min)
 
-  makeNewModel = (user_id) ->
-    storage = new RedisStorage(client, "markov_#{user_id}:")
+  makeNewModel = (user_name) ->
+    storage = new RedisStorage(client, "markov_#{user_name}:")
     return new MarkovModel(storage, ply, min)
 
   models = {}
@@ -59,21 +59,25 @@ module.exports = (robot) ->
     return unless msg.message.room?
 
     # Ignore messages sent via API
-    return unless msg.message.user.jid?
+    return unless msg.message.user.id?
 
-    user = msg.message.user
-    models[user.id] = models[user.id] or makeNewModel(user.id)
-    model = models[user.id]
+    user = msg.message.user.name
+    models[user] = models[user] or makeNewModel(user)
+    model = models[user]
 
     model.learn msg.message.text
     all_model.learn msg.message.text
 
   # Generate markov chains on demand, optionally seeded by some initial state.
-  robot.respond /mimic\s+(\w+)(\s+(.+))?$/i, (msg) ->
-    user_id = msg.match[1]
-    model = if user_id == 'all' then all_model else models[user_id]
+  robot.respond /mimic @(\w+) (.*)/i, (msg) ->
+    user_name = msg.match[1]
+    console.log(user_name)
+    if user_name == 'all'
+      model = all_model
+    else
+      model = models[user_name]
     if not model
       msg.send 'Derp'
     else
-      model.generate (msg.match[3] or ''), max, (text) =>
+      model.generate (msg.match[2] or ''), max, (text) =>
         msg.send text
