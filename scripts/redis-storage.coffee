@@ -7,11 +7,11 @@ class RedisStorage
   # Create a storage module that uses the provided Redis connection.
   constructor: (@client) ->
 
-  # Uniformly and unambiguously convert an array of Strings and nulls into a valid
-  # Redis key. Uses a length-prefixed encoding.
-  #
-  # _encode([null, null, "a"]) = "markov:001a"
-  # _encode(["a", "bb", "ccc"]) = "markov:1a2b3c"
+    # Uniformly and unambiguously convert an array of Strings and nulls into a valid
+    # Redis key. Uses a length-prefixed encoding.
+    #
+    # _encode([null, null, "a"]) = "markov:001a"
+    # _encode(["a", "bb", "ccc"]) = "markov:1a2b3c"
   _encode: (key) ->
     encoded = for part in key
       if part then "#{part.length}#{part}" else "0"

@@ -10,7 +10,7 @@ class MarkovModel
   # probabilities of the next state.
   constructor: (@storage, @ply, @min) ->
 
-  # Split a line of text into whitespace-separated, nonempty words.
+    # Split a line of text into whitespace-separated, nonempty words.
   _words: (phrase) ->
     (word for word in phrase.split /\s+/ when word.length > 0)
 
@@ -53,9 +53,9 @@ class MarkovModel
     for i in [0..words.length - @ply - 1]
       { from: words.slice(i, i + @ply), to: words[i + @ply] or sentinel }
 
-  # Add a phrase to the model. Increments the frequency of each @ply-order
-  # state transition extracted from the phrase. Ignores any phrases containing
-  # less than @min words.
+      # Add a phrase to the model. Increments the frequency of each @ply-order
+      # state transition extracted from the phrase. Ignores any phrases containing
+      # less than @min words.
   learn: (phrase) ->
     words = @._words(phrase)
 
