@@ -55,7 +55,7 @@ module.exports = (robot) ->
       modifier = -1
     user_name = msg.message.user.name
     room = msg.message.user.room
-    data = {'the_thing': the_thing,'operator': modifier,'reason': reason,'user_name': user_name,'room': room,'directive': 0}
+    data = {'the_thing': the_thing,'operator': modifier,'reason': reason,'user_name': user_name,'room': room}
     robot.http("http://idop.appit.ventures/plusplus/newVote").query(data).get() (err, res, body) ->
     	console.log(body)
 
