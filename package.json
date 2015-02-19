@@ -42,6 +42,7 @@
     "hubot-whatthecommit": "0.0.4",
     "hubot-youtube": "*",
     "jsdom": "^3.1.1",
+    "pretty-bytes": "^1.0.3",
     "prompt": "^0.2.14",
     "psi": "^1.0.5",
     "request": "^2.51.0",
