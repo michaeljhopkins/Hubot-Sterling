@@ -30,7 +30,7 @@
     "hubot-googleapi": "^0.2.3",
     "hubot-help": "^0.1.1",
     "hubot-maps": "0.0.1",
-    "hubot-markov": "file:../../../../tmp/npm-6249-fbe59416/git-cache-6817d8ec83c1/5b676653e05fab70cc103db60a360ad5f8cdd3d3",
+    "hubot-markov": "git+ssh://git@github.com:bsiegel/hubot-markov.git#v1.3.0",
     "hubot-philipshue": "0.0.8",
     "hubot-pugme": "^0.1.0",
     "hubot-qr": "0.0.2",
