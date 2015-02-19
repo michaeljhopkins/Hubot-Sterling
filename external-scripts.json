@@ -11,12 +11,12 @@
   "hubot-google-translate",
   "hubot-help",
   "hubot-maps",
+  "hubot-markov",
   "hubot-qr",
   "hubot-redis-brain",
   "hubot-uber",
   "hubot-urban",
   "hubot-pugme",
   "hubot-whatthecommit",
-  "hubot-youtube",
-  "hubot-markov"
+  "hubot-youtube"
 ]

@@ -1,8 +1,5 @@
-node_modules
+/node_modules
 .DS_Store*
-.idea
-npm-debug.log
-nohup.out
-.hubot_history
-bin/hubot
-bin
+/.idea
+/bin/hubot
+/.cocomoignore
