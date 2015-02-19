@@ -38,17 +38,10 @@ module.exports = (robot) ->
   max = process.env.HUBOT_MARKOV_GENERATE_MAX or 50
 
   all_storage = new RedisStorage(client)
-  console.log("ln 41")
-  console.log(all_storage)
   all_model = new MarkovModel(all_storage, ply, min)
-  console.log("ln 44")
-  console.log(all_model)
 
   makeNewModel = (user_id) ->
-    console.log(user_id)
     storage = new RedisStorage(client, "markov_#{user_id}:")
-    console.log("ln 50")
-    console.log(storage)
     return new MarkovModel(storage, ply, min)
 
   models = {}
@@ -59,27 +52,18 @@ module.exports = (robot) ->
     return if !msg.message.text
 
     user = msg.message.user
-    console.log("ln 61")
-    console.log(user)
     models[user.id] = models[user.id] or makeNewModel(user.id)
     model = models[user.id]
-    console.log("ln 66")
-    console.log(model)
 
     model.learn msg.message.text
     all_model.learn msg.message.text
 
   # Generate markov chains on demand, optionally seeded by some initial state.
-  robot.respond /mimic\s+(\w+)(\s+(.+))?$/i, (msg) ->
+  robot.respond /MIMIC\s+(\w+)(\s+(.+))?$/i, (msg) ->
     user_id = msg.match[1]
-    if user_id == 'all'
-      model = all_model
-    else
-      model = models[user_id]
+    model = if user_id == 'all' then all_model else models[user_id]
     if not model
       msg.send 'Derp'
     else
-      model.generate (msg.match[3] or ''), max, (text) ->
-        console.log("ln 83")
-        console.log(text)
+      model.generate (msg.match[3] or ''), max, (text) =>
         msg.send text
