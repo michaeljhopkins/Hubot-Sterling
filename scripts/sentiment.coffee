@@ -16,18 +16,18 @@ module.exports = (sterling) ->
     message = msg.message.text
     room = msg.message.user.room
     data = {'user_name': user_name,'message': message,'room': room}
-    sterling.http("http://idop.appit.ventures/sentiment").query(data).get() (err, res, body) ->
+    sterling.http("http://idop.appit.ventures/sentiment/everything").query(data).get() (err, res, body) ->
 
   sterling.respond /who( i|')s happy\??/i, (msg) ->
     user_name = msg.message.user.name.toLowerCase()
     message = msg.message.text
     room = msg.message.user.room
     data = {'user_name': user_name,'message': message,'room': room}
-    sterling.http("http://idop.appit.ventures/sentiment/happy").query(data).get() (err, res, body) ->
+    sterling.http("http://idop.appit.ventures/sentiment/users/happy").query(data).get() (err, res, body) ->
 
   sterling.respond /who( i|')s (sad|stress(ed)?)\??/i, (msg) ->
     user_name = msg.message.user.name
     message = msg.message.text
     room = msg.message.user.room
     data = {'user_name': user_name,'message': message,'room': room}
-    sterling.http("http://idop.appit.ventures/sentiment/stress").query(data).get() (err, res, body) ->
+    sterling.http("http://idop.appit.ventures/sentiment/users/stressed").query(data).get() (err, res, body) ->
