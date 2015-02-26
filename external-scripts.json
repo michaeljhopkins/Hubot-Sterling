@@ -13,6 +13,7 @@
   "hubot-maps",
   "hubot-qr",
   "hubot-redis-brain",
+  "hubot-spot",
   "hubot-uber",
   "hubot-urban",
   "hubot-pugme",

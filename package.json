@@ -36,6 +36,7 @@
     "hubot-redis-brain": "0.0.2",
     "hubot-scripts": "^2.5.16",
     "hubot-slack": "^3.2.1",
+    "hubot-spot": "^1.0.2",
     "hubot-uber": "^1.0.1",
     "hubot-urban": "^1.0.0",
     "hubot-whatthecommit": "0.0.4",
