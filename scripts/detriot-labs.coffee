@@ -12,8 +12,6 @@
 #   None
 #
 # Commands:
-#   breaking bad death - Displays a random death scene from Breaking Bad
-#   is <name> dead - Check if a character is dead or not
 #   good morning
 #   make it so
 #
