@@ -8,7 +8,6 @@
 // none
 //
 // Commands:
-// Hubot lets conquer - hubot will pick your random conqueror name.
 //
 // Author:
 // Seth Healy.

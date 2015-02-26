@@ -8,7 +8,6 @@
 //   none
 //
 // Commands:
-//   Hubot happy <city name> (mostly major cities 107 total available).
 //
 // Author:
 //   ndickiso

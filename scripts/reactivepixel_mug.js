@@ -8,7 +8,6 @@
 // None
 //
 // Commands:
-// Hubot mug me - Gives you a random mug shot.
 //
 // Author:
 // Austin Mayer

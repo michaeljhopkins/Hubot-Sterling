@@ -8,8 +8,6 @@
 // none
 //
 // Commands:
-// Hubot (throw|flip|toss) a coin - hubot will flip a coin (heads or tails, who knows)
-// Hubot (throw|flip|toss) <number> coins - hubot will flip the specified number of coins and return a count of heads and tails (1 - 1000000)
 //
 // Author:
 // Holly Springsteen

@@ -8,6 +8,22 @@
 #   None
 #
 # Commands:
+#   hubot nasa pic - gets the NASA Astronomy Picture of the Day for today.
+#   hubot nasa picture - gets the NASA Astronomy Picture of the Day for today.
+#   hubot nasa pic <date> - gets the NASA Astronomy Picture of the Day for a specific date (between 06/16/1995 and today, some dates may have no picture)
+#   hubot nasa picture <date> - gets the NASA Astronomy Picture of the Day for a specific date (between 06/16/1995 and today, some dates may have no picture)
+#   hubot pokedex <pokemonName> - A real live pokedex
+#   hubot mug me - Gives you a random mug shot.
+#   hubot marvel <character> - Will get information about a character from Marvel.
+#   hubot marvel Iron Man - Will return information about Iron Man.
+#   hubot happy <city name> - Get happy hour info
+#   hubot random fact
+#   hubot lets conquer - hubot will pick your random conqueror name.
+#   hubot (throw|flip|toss) a coin - hubot will flip a coin (heads or tails, who knows)
+#   hubot (throw|flip|toss) <number> coins - hubot will flip lots of coins
+#   hubot clear desktop - clears the desktop avg line height
+#   hubot clear mobile - clears the mobile avg line height
+#   hubot clear tablet - clears the tablet avg line height
 #   hubot chuck me -- random Chuck Norris fact.
 #   hubot chuck me <user> -- let's see how <user> would do as Chuck Norris
 #

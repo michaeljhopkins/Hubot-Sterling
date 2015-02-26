@@ -8,7 +8,6 @@
 // None
 //
 // Commands:
-// Hubot pokedex <pokemonName> - This command will read the value of "pokemonName" and will query the Pokeapi.com for that species of Pokemon. The api will respond with a json object containing information about the Pokemon species specified.
 //
 // Author:
 // Antonio J. Figueroa

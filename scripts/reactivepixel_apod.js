@@ -9,13 +9,6 @@
 // none
 //
 // Commands:
-// Hubot nasa pic - gets the NASA Astronomy Picture of the Day for today.
-// Hubot nasa picture - gets the NASA Astronomy Picture of the Day for today.
-// Hubot nasa pic <date> - gets the NASA Astronomy Picture of the Day for a specific date (between 06/16/1995 and today, some dates may have no picture)
-// Hubot nasa picture <date> - gets the NASA Astronomy Picture of the Day for a specific date (between 06/16/1995 and today, some dates may have no picture)
-// Hubot nasa pic 11/11/11 - gets the NASA Astronomy Picture of the Day for 11/11/11
-// Hubot nasa picture 12/31/2013 - gets the NASA Astronomy Picture of the Day for 12/31/2013
-// Hubot nasa picture May 4, 2014 - gets the NASA Astronomy Picture of the Day for May 4, 2014
 //
 // Author:
 // Bryan Erickson

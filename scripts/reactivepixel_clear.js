@@ -8,9 +8,6 @@
 //   None
 //
 // Commands:
-//	Hubot clear desktop - clears the desktop avg line height
-//	Hubot clear mobile - clears the mobile avg line height
-//	Hubot clear tablet - clears the tablet avg line height
 //
 // Author:
 //	 dgerena aka Eli!

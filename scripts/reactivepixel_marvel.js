@@ -9,8 +9,6 @@
 // HUBOT_MARVEL_PUBLIC_KEY
 //
 // Commands:
-// Hubot marvel <character> - Will get information about a character from Marvel. (Obscure characters may not have information yet.)
-// Hubot marvel Iron Man - Will return information about Iron Man.
 //
 // Author:
 // Bryan Erickson

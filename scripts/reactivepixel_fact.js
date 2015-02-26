@@ -8,7 +8,6 @@
 // none
 //
 // Commands:
-// Hubot random fact
 //
 // Author:
 // ndickiso
