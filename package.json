@@ -9,6 +9,7 @@
     "url": "https://github.com/github/hubot.git"
   },
   "dependencies": {
+    "MD5": "^1.2.1",
     "async": "^0.9.0",
     "cheerio": "^0.18.0",
     "clark": "0.0.6",
@@ -42,7 +43,6 @@
     "hubot-whatthecommit": "0.0.4",
     "hubot-youtube": "^0.1.2",
     "jsdom": "^3.1.1",
-    "md5": "^1.0.0",
     "pretty-bytes": "^1.0.3",
     "prompt": "^0.2.14",
     "psi": "^1.0.5",
