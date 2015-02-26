@@ -5,12 +5,7 @@
 #   None
 #
 # Commands:
-#   hubot cards deal - adds you to the current cards game
-#   hubot cards quit - removes you from the current cards game
-#   hubot cards show - messages you your cards again incase you forgot
-#   /cards {id} - plays the id of your chosen card for the current round (a slack slash command is taking care of it though)
-#   hubot cards choose {id} - The current round's judge chooses the best card against the pre determined black card
-#   hubot cards status - Returns the current rounds judge, and any players who have not yet played a card
+#   hubot cards help - displays the SlackAgainstHumanity specific commands
 #
 # Author:
 #   michael-hopkins
@@ -59,3 +54,11 @@ module.exports = (sterling) ->
     room = msg.message.user.room
     data = {'user_name': user,'message': message,'room': room}
     sterling.http(url+"status").query(data).get() (err, res, body) ->
+
+  sterling.respond /cards help/i, (msg) ->
+    msg.send "`sterling cards deal` - adds you to the current cards game"
+    msg.send "`sterling cards quit` - removes you from the current cards game"
+    msg.send "`sterling cards show` - messages you your cards again incase you forgot"
+    msg.send "`\/cards {id}` - plays the id of your chosen card for the current round (a slack slash command is taking care of it though)"
+    msg.send "`sterling cards choose {id}` - The current round's judge chooses the best card against the pre determined black card"
+    msg.send "`sterling cards status` - Returns the current rounds judge, and any players who have not yet played a card"
