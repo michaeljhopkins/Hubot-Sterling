@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot chat <query> - calls pandorabot
+#   . {message} - calls pandorabot
 
 QS = require "querystring"
 xml2js = require 'xml2js'

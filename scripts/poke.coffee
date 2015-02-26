@@ -5,7 +5,6 @@
 #   None
 #
 # Commands:
-#   Sterling send dondraper1 WhatsUp poke from dondraper1
 #
 # Author:
 #   mikenolimits

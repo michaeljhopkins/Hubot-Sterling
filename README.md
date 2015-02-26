@@ -31,7 +31,6 @@
  * `sterling catfact` - Reply back with random cat fact.
  * `sterling chat <query>` - calls pandorabot
  * `sterling conspiracy me` - Get a random conspiracy theory
- * `sterling conspiracy me` - Get a random conspiracy theory
  * `sterling convert <expression> in <units>` - Convert expression to given units.
  * `sterling designer excuse` - Get a random designer excuse
  * `sterling designer excuse me` - Get a random designer excuse

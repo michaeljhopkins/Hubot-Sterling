@@ -8,13 +8,7 @@
 # Configuration:
 #
 # Commands:
-#   <name>++
-#   <name>--
-#   hubot score <name> [for <reason>]
-#   hubot top <amount>
-#   hubot bottom <amount>
-#   hubot erase <user> [<reason>]
-#   GET http://<url>/hubot/scores[?name=<name>][&direction=<top|botton>][&limit=<10>]
+#   hubot plusplus help - displays the plusplus specific commands
 #
 # Author:
 #   ajacksified
@@ -102,6 +96,14 @@ module.exports = (robot) ->
       "#{name} has #{score} points."
 
     msg.send reasonString
+
+  robot.respond /plusplus help/i, (msg) ->
+    msg.send "`<name>++`"
+    msg.send "`<name>--`"
+    msg.send "`sterling score <name> [for <reason>]`"
+    msg.send "`sterling top <amount>`"
+    msg.send "`sterling bottom <amount>`"
+    msg.send "`sterling erase <user> [<reason>]`"
 
   robot.respond /(top|bottom) (\d+)/i, (msg) ->
     amount = parseInt(msg.match[2]) || 10

@@ -10,9 +10,6 @@
 #   None
 #
 # Commands:
-#   for the life of me - Sterling can't help but break out in song
-#   I'm late - Response with the only image to be used when you're late!
-#   business - Sterling really loves business
 #   hubot encourage me
 #   hubot encourge name
 #   hubot encourage all
