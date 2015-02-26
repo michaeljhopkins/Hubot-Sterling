@@ -7,9 +7,6 @@
 // Configuration:
 //   None
 //
-// Commands:
-//   NSA
-//
 // Author:
 //   Juan Pemberthy - based on @jesseditson's DHH says.
 

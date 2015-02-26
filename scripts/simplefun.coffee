@@ -16,11 +16,6 @@
 #   hubot cast <card name> - a picture of the named magic card
 #   hubot nettipot - Send scarring, horrifying image of a nettipot in use.
 #   hubot nettibomb - Send a nettibomb
-#   *no
-#   *tableflip
-#   *dunno
-#   *unstoppable
-#   *drama
 #
 # Author:
 #   michael-hopkins

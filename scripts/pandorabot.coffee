@@ -7,8 +7,6 @@
 # Configuration:
 #   None
 #
-# Commands:
-#   . {message} - calls pandorabot
 
 QS = require "querystring"
 xml2js = require 'xml2js'
