@@ -2,8 +2,7 @@
 #   [hubot] makes you a video with crumbles (http://www.crumbles.co)
 #
 # Commands:
-#   crumbles (me) [text] - outputs a link to the crumblized video
-#   crumbles (me) [text]:[dictionary] - outputs a link to the crumblized video with the dictonary specified
+#   crumbles me {text} - outputs a link to the crumblized video
 
 class Crumbler
   querify: (input) ->
