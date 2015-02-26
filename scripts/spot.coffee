@@ -236,7 +236,6 @@ module.exports = (robot) ->
     what = message.match[1]
     params = {what: what}
     spotRequest message, '/say', 'put', params, (err, res, body) ->
-      message.send(what)
 
   robot.respond /say me/i, (message) ->
     message.send('no way ' + message.message.user.name);
