@@ -256,7 +256,7 @@ module.exports = (robot) ->
     spotRequest message, '/airplay', 'put', params, (err, res, body) ->
       message.send("#{body} :mega:")
 
-  robot.respond /spot/i, (message) ->
+  robot.respond /spot$/i, (message) ->
     spotRequest message, '/spot', 'put', {}, (err, res, body) ->
       message.send(body)
 
