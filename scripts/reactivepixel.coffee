@@ -8,8 +8,8 @@
 #   None
 #
 # Commands:
-#   hubot Chuck me -- random Chuck Norris fact.
-#   hubot Chuck me <user> -- let's see how <user> would do as Chuck Norris
+#   hubot chuck me -- random Chuck Norris fact.
+#   hubot chuck me <user> -- let's see how <user> would do as Chuck Norris
 #
 # Author:
 #   Seth Healy
@@ -21,7 +21,7 @@ module.exports = (robot) ->
   # Second one being Chuck me <user> where you can insert a user name and hubot will tell a joke
   # but with your name.
 
-  robot.respond /(Chuck me)(me)?(.*)/i,(msg)->
+  robot.respond /(chuck me)(me)?(.*)/i,(msg)->
     olduser = msg.match[3]
     user = olduser.replace /\s{2,}/g, ""
     # I am calling the api here for the the Chuck me feature.
