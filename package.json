@@ -46,6 +46,7 @@
     "pretty-bytes": "^1.0.3",
     "prompt": "^0.2.14",
     "psi": "^1.0.5",
+    "redis": "^0.12.1",
     "request": "^2.53.0",
     "scraper": "0.0.9",
     "simple-twitter": "^1.0.7",
