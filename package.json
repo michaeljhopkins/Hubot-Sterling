@@ -30,6 +30,7 @@
     "hubot-google-images": "^0.1.3",
     "hubot-google-translate": "^0.1.0",
     "hubot-googleapi": "^0.2.3",
+    "hubot-group-alias": "^1.0.0",
     "hubot-help": "^0.1.1",
     "hubot-maps": "0.0.1",
     "hubot-philipshue": "0.0.8",
