@@ -48,6 +48,7 @@
     "psi": "^1.0.5",
     "request": "^2.53.0",
     "scraper": "0.0.9",
+    "simple-twitter": "^1.0.7",
     "soupselect": "^0.2.0",
     "twit": "^1.1.20",
     "underscore": "^1.7.0",
