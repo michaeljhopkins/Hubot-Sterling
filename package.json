@@ -41,6 +41,7 @@
     "hubot-scripts": "^2.5.16",
     "hubot-uber": "^1.0.1",
     "hubot-urban": "^1.0.0",
+    "hubot-vtr-scripts": "^1.1.0",
     "hubot-whatthecommit": "0.0.4",
     "hubot-youtube": "^0.1.2",
     "jsdom": "^3.1.1",
