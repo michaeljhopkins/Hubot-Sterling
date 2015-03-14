@@ -12,6 +12,7 @@
   "hubot-group-alias",
   "hubot-help",
   "hubot-maps",
+  "hubot-plusplus",
   "hubot-qr",
   "hubot-redis-brain",
   "hubot-uber",

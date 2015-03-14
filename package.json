@@ -35,6 +35,7 @@
     "hubot-irc": "^0.2.7",
     "hubot-maps": "0.0.1",
     "hubot-philipshue": "0.0.8",
+    "hubot-plusplus": "^1.1.5",
     "hubot-pugme": "^0.1.0",
     "hubot-qr": "0.0.2",
     "hubot-redis-brain": "0.0.2",

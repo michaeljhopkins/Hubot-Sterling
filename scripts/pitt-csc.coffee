@@ -73,13 +73,6 @@ cumberbatches = [
   "CLOISTERFARM"
 ]
 module.exports = (robot) ->
-  robot.respond /cowsay( me)? (.*)/i, (msg) ->
-    msg
-    .http("http://cowsay.morecode.org/say")
-    .query(format: 'text', message: msg.match[2])
-    .get() (err, res, body) ->
-      msg.send "```\n#{body}```"
-
   robot.hear /benedict cumberbatch/i, (msg) ->
     benedict = msg.random benedicts
     cumberbatch = msg.random cumberbatches

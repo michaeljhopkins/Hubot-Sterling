@@ -124,20 +124,9 @@ module.exports = (robot) ->
   robot.hear /jaden/i, (msg) ->
     msg.send msg.random quotes
 
-  robot.hear /(go to bed|goodnight|up late)/i, (msg) ->
-    msg.send "http://i.imgur.com/tVrd0UA.jpg"
-
-  robot.hear /good morning/i, (msg) ->
-    msg.send msg.random ways_to_say_good_morning
-
   robot.hear /make it so\b/i, (msg) ->
     currentDate = new Date()
     if currentDate.getMonth() is DECEMBER
       msg.send "http://i.imgur.com/U2tgKjM.jpg"
     else
       msg.send "http://i.imgur.com/rsXNr22.jpg"
-
-  robot.hear /\(thank you\)|(\bthank you\b)/i, (msg) ->
-    if msg.match[1] is "thank you"
-      if Math.random() > .8
-        msg.send "https://s3.amazonaws.com/uploads.hipchat.com/31582/209877/5xpLrqT70xRfInI/dwy0i4evvxsvt1rf6ehi.gif"
