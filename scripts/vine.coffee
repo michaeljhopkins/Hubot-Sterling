@@ -15,6 +15,7 @@ user    = "http://idop.appit.ventures/vine/find"
 
 module.exports = (sterling) ->
 
+    sterling.respond /vine funny pls/i, (msg) ->
      data = {'type': "funny",'room': msg.message.user.room}
     sterling.http(channel).query(data).get() (err, res, body) ->
 
