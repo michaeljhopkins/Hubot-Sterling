@@ -16,25 +16,25 @@ user    = "http://idop.appit.ventures/vine/find"
 module.exports = (sterling) ->
   sterling.respond /vine funny pls/i, (msg) ->
      room = msg.message.user.room
-     data = {'type': "funny",'room': room}
+     data = {'type': "funny",'room': msg.message.user.room}
     sterling.http(channel).query(data).get() (err, res, body) ->
 
   sterling.respond /vine music pls/i, (msg) ->
      room = msg.message.user.room
-     data = {'type': 'music','room': room}
+     data = {'type': 'music','room': msg.message.user.room}
     sterling.http(channel).query(data).get() (err, res, body) ->
 
   sterling.respond /vine cover pls/i, (msg) ->
      room = msg.message.user.room
-     data = {'hashtag': 'cover','room': room}
+     data = {'hashtag': 'cover','room': msg.message.user.room}
     sterling.http(tag).query(data).get() (err, res, body) ->
 
   sterling.respond /vine tag (.*) pls/i, (msg) ->
      room = msg.message.user.room
-     data = {'hashtag':msg.match[1],'room': room}
+     data = {'hashtag':msg.match[1],'room': msg.message.user.room}
     sterling.http(tag).query(data).get() (err, res, body) ->
 
   sterling.respond /vine user (.*) pls/i, (msg) ->
      room = msg.message.user.room
-     data = {'username':msg.match[1],'room': room}
+     data = {'username':msg.match[1],'room': msg.message.user.room}
     sterling.http(user).query(data).get() (err, res, body) ->
