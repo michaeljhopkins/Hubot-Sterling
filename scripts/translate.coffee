@@ -79,17 +79,17 @@ module.exports = (robot) ->
     room = msg.message.user.room
     if(room == 'hello-printing' || room == 'random')
       r = 'crappypoemsbywilson'
-      if(user == 'trungrueta')
+      if(user == 'michael-hopkins')
         source = 'vi'
         target = 'en'
       else
         source = 'en'
         target = 'vi'
-        msg.http("https://translate.google.com/translate_a/t").query({client: 't', hl: 'en', multires: 1, sc: 1, sl: source, ssel: 0, tl: target, tsel: 0, uptl: "en", text: term}).header('User-Agent', 'Mozilla/5.0').get() (err, res, body) ->
-          data = body
-          if data.length > 4 and data[0] == '['
-            parsed = eval(data)
-            language = languages[parsed[2]]
-            parsed = parsed[0] and parsed[0][0] and parsed[0][0][0]
-            if parsed
-              robot.messageRoom r, parsed
+      msg.http("https://translate.google.com/translate_a/t").query({client: 't', hl: 'en', multires: 1, sc: 1, sl: source, ssel: 0, tl: target, tsel: 0, uptl: "en", text: term}).header('User-Agent', 'Mozilla/5.0').get() (err, res, body) ->
+        data = body
+        if data.length > 4 and data[0] == '['
+          parsed = eval(data)
+          language = languages[parsed[2]]
+          parsed = parsed[0] and parsed[0][0] and parsed[0][0][0]
+          if parsed
+            robot.messageRoom r, parsed
