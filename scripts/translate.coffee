@@ -79,7 +79,7 @@ module.exports = (robot) ->
     room = msg.message.user.room
     if(room == 'hello-printing' || room == 'random')
       r = 'crappypoemsbywilson'
-      if(user == 'michael-hopkins')
+      if(user == 'trungrueta')
         source = 'vi'
         target = 'en'
       else
