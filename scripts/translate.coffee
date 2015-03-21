@@ -69,25 +69,41 @@ languages =
   "cy": "Welsh",
   "yi": "Yiddish"
 module.exports = (robot) ->
+  # Find the user by user name from hubot's brain.
+  #
+  # name - A full or partial name match.
+  #
+  # Returns a user object if a single user is found, an array of users if more
+  # than one user matched the name or false if no user is found.
+  findUser = (name) ->
+    users = robot.brain.usersForFuzzyName name
+    if users.length is 1
+      users[0]
+    else if users.length > 1
+      users
+    else
+      false
+
+  robot.respond /autotrans me (.{2}) to (.{2})/i, (msg) ->
+    messageSender = findUser msg.message.user.name
+    if typeof messageSender is 'object'
+      messageSender.preferredLanguage = sourceDefault: msg.match[1], targetDefault: msg.match[2]
+
   robot.hear /^(?!(wilson|wilson|\.|\@wilson|$))(.*)/i, (msg) ->
-    user = msg.message.user.name
-    term = msg.match[2]
-    room = msg.message.user.room
-    if(room == 'hello-printing' || room == 'random')
-      r = 'crappypoemsbywilson'
-      if(user == 'trungrueta')
-        source = 'auto'
-        target = 'en'
-      else
-        source = 'auto'
-        target = 'vi'
-        msg.http("https://translate.google.com/translate_a/t").query({client: 't', hl: 'en', multires: 1, sc: 1, sl: source, ssel: 0, tl: target, tsel: 0, uptl: "en", text: term}).header('User-Agent', 'Mozilla/5.0').get() (err, res, body) ->
+    messageSender = findUser msg.message.user.name
+    if typeof messageSender is 'object'
+      src = user.preferredLanguage.sourceDefault
+      tgt = user.preferredLanguage.targetDefault
+      trm = msg.match[2]
+      room = msg.message.user.room
+      if(room == 'hello-printing' || room == 'random')
+        roomToAutoTransTo = 'crappypoemsbywilson'
+        msg.http("https://translate.google.com/translate_a/t").query({client: 't', hl: 'en', multires: 1, sc: 1, sl: src, ssel: 0, tl: tgt, tsel: 0, uptl: "en", text: trm}).header('User-Agent', 'Mozilla/5.0').get() (err, res, body) ->
           data = body
           if data.length > 4 and data[0] == '['
             parsed = eval(data)
-            language = languages[parsed[2]]
-            parsed = parsed[0] and parsed[0][0] and parsed[0][0][0]
-            if parsed
-              if msg.match[2] is undefined
-              else
-                robot.messageRoom r, parsed
+          parsed = parsed[0] and parsed[0][0] and parsed[0][0][0]
+          if parsed
+            if msg.match[2] is undefined
+            else
+              robot.messageRoom roomToAutoTransTo, parsed
