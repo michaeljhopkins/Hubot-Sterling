@@ -76,12 +76,12 @@ module.exports = (robot) ->
     if(room == 'hello-printing' || room == 'random')
       r = 'crappypoemsbywilson'
       if(user == 'trungrueta')
-        l = 'auto'
+        source = 'auto'
         target = 'en'
       else
-        l = 'auto'
+        source = 'auto'
         target = 'vi'
-        msg.http("https://translate.google.com/translate_a/t").query({client: 't', hl: 'en', multires: 1, sc: 1, sl: 'en', ssel: 0, tl: 'vi', tsel: 0, uptl: "en", text: term}).header('User-Agent', 'Mozilla/5.0').get() (err, res, body) ->
+        msg.http("https://translate.google.com/translate_a/t").query({client: 't', hl: 'en', multires: 1, sc: 1, sl: source, ssel: 0, tl: target, tsel: 0, uptl: "en", text: term}).header('User-Agent', 'Mozilla/5.0').get() (err, res, body) ->
           data = body
           if data.length > 4 and data[0] == '['
             parsed = eval(data)
