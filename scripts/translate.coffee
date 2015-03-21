@@ -4,7 +4,6 @@
 # Author:
 
 module.exports = (robot) ->
-  language_choices = (language for _, language of languages).sort().join('|')
   pattern = new RegExp('^(?!(wilson|wilson|\.|\@wilson|$))(.*)', 'i')
   # Find the user by user name from hubot's brain.
   #
@@ -48,4 +47,4 @@ module.exports = (robot) ->
               parsed = eval(data)
             p = parsed[0] and parsed[0][0] and parsed[0][0][0]
             if p
-                robot.messageRoom roomToAutoTransTo, p
+              robot.messageRoom roomToAutoTransTo, p
