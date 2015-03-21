@@ -43,6 +43,7 @@ module.exports = (robot) ->
           dataToTrans = {client: 't', hl: 'en', multires: 1, sc: 1, sl: origin, ssel: 0, tl: target, tsel: 0, uptl: "en", text: term}
           msg.http("https://translate.google.com/translate_a/t").query(dataToTrans).header('User-Agent', 'Mozilla/5.0').get() (err, res, body) ->
             data = body
+            console.log(data)
             if data.length > 4 and data[0] == '['
               parsed = eval(data)
             p = parsed[0] and parsed[0][0] and parsed[0][0][0]
