@@ -9,9 +9,10 @@
 #
 # Author:
 #   michael-kantor
-channel = "http://idop.appit.ventures/vine/channel"
-tag = "http://idop.appit.ventures/vine/tag"
-user = "http://idop.appit.ventures/vine/find"
+baseUrl = process.env.HUBOT_IDOP_HOSTNAME
+channel = baseUrl+"vine/channel"
+tag = baseUrl+"vine/tag"
+user = baseUrl+"/vine/find"
 
 module.exports = (sterling) ->
   sterling.respond /vine funny pls/i, (msg) ->
