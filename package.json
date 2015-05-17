@@ -16,7 +16,7 @@
     "ent": "^2.2.0",
     "githubot": "^1.0.0-beta2",
     "htmlparser": "^1.7.7",
-    "hubot": "^2.11.1",
+    "hubot": "^2.12.0",
     "hubot-ambush": "0.0.3",
     "hubot-calculator": "^0.4.0",
     "hubot-conspire": "^1.0.0",
