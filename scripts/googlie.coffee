@@ -1,6 +1,6 @@
 
 module.exports = (robot) ->
-  robot.respond /^googly me (.*)|^googlify me (.*)|^googly eyes (.*)/i, (msg) ->
+  robot.respond /googly me (.*)|googlify me (.*)|googly eyes (.*)/i, (msg) ->
     mustachify = "http://googlio.herokuapp.com/?src="
     imagery = msg.match[1]
     if imagery.match /^https?:\/\//i
