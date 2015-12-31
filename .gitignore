@@ -3,6 +3,7 @@
 /.idea
 /bin/hubot
 /bin/philbot
+/bin/brybot
 /.cocomoignore
 *.log
 *.log.offset
