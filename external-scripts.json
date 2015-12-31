@@ -1,19 +1,16 @@
 [
-  "hubot-ambush",
   "hubot-calculator",
   "hubot-conspire",
   "hubot-dudesweet",
   "hubot-flirt",
   "hubot-google-images",
   "hubot-google-translate",
-  "hubot-markov",
   "hubot-help",
   "hubot-plusplus",
   "hubot-qr",
   "hubot-redis-brain",
   "hubot-sentiment",
   "hubot-urban",
-  "hubot-vtr-scripts",
   "hubot-pugme",
   "hubot-youtube"
 ]

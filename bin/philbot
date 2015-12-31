@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e 
+
+export PATH="$PATH:/home/forge/philbot.com/current/node_modules/.bin:node_modules/.bin:node_modules/.bin:node_modules/"
+export HUBOT_SLACK_TOKEN=""
+export HUBOT_GOOGLE_CSE_ID="008457094937004325094:u-eier_96te"
+export HUBOT_GOOGLE_CSE_KEY="AIzaSyD01g2vxaNq6bkZYaN5WtyJE-hAK4QV0RY"
+export HUBOT_MUSTACHIFY_URL="hopkinsmustachify.herokuapp.com"
+export HUBOT_SMS_SID="AC51904540627ac115c3b0ee42c4a3c7ac"
+export HUBOT_SMS_TOKEN="51ba98a17cd8a596f7f367847fe8c266"
+export HUBOT_SMS_FROM="9706707212"
+export HUBOT_PANDORA_BOTID="f3d034f13e34d592"
+
+exec node_modules/.bin/hubot "$@"
+
+

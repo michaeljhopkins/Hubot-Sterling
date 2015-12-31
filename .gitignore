@@ -3,3 +3,6 @@
 /.idea
 /bin/hubot
 /.cocomoignore
+*.log
+*.log.offset
+.hubot_history
