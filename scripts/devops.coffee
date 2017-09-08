@@ -5,7 +5,7 @@
 #   None
 #
 # Commands:
-#   hubot devops me - Grab a random gif from http://devopsreactions.tumblr.com/
+#   hubot devops me - Grab a random gif from devopsreactions tumblr
 #
 # Author:
 #   epinault

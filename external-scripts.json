@@ -1,16 +1,11 @@
 [
-  "hubot-calculator",
   "hubot-conspire",
-  "hubot-dudesweet",
-  "hubot-flirt",
   "hubot-google-images",
   "hubot-google-translate",
   "hubot-help",
   "hubot-plusplus",
-  "hubot-qr",
   "hubot-redis-brain",
   "hubot-sentiment",
   "hubot-urban",
-  "hubot-pugme",
   "hubot-youtube"
 ]
