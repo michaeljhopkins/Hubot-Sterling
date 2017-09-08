@@ -8,3 +8,7 @@
 *.log
 *.log.offset
 .hubot_history
+yarn.lock
+package-lock.json
+sterling.pid
+/bin/*
