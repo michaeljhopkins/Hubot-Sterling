@@ -23,3 +23,9 @@ module.exports = (sterling) ->
         msg.send "Started deployment for 'onlinemeded/billing-api'"
       else
         msg.send "Something is Broke"
+  sterling.hear /deploy flashback\-api/i, (msg) ->
+    sterling.http("https://envoyer.io/deploy/WggKGws47Jps2c42eov59dQx1weVRH9CB0CM4eSB").get() (err, res, body) ->
+      if res.statusCode is 200
+        msg.send "Started deployment for 'onlinemeded/flashback-api'"
+      else
+        msg.send "Something is Broke"
